@@ -1,5 +1,3 @@
-Claro, aquí tienes una versión de un archivo `README.md` en formato Markdown, que es más adecuado para GitHub y se mostrará correctamente allí:
-
 ````markdown
 # Aplicación Laravel
 
