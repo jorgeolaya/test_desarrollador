@@ -1,70 +1,136 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>README para Aplicación Laravel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .btn:hover {background-color: #3e8e41}
+        .btn:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Aplicación Laravel</h1>
+    <p>Esta es una aplicación Laravel simple que demuestra el registro y autenticación de usuarios. Siga las instrucciones a continuación para clonar, configurar y ejecutar la aplicación en su máquina local.</p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+    <h2>Tabla de Contenidos</h2>
+    <ul>
+        <li><a href="#clone">Clonar el Repositorio</a></li>
+        <li><a href="#setup">Configurar la Aplicación</a></li>
+        <li><a href="#database">Configurar la Base de Datos</a></li>
+        <li><a href="#migrations">Ejecutar Migraciones</a></li>
+        <li><a href="#serve">Servir la Aplicación</a></li>
+        <li><a href="#usage">Uso</a></li>
+        <li><a href="#credits">Créditos</a></li>
+    </ul>
 
-## About Laravel
+    <h2 id="clone">Clonar el Repositorio</h2>
+    <p>Primero, clona el repositorio en tu máquina local usando el siguiente comando:</p>
+    <pre><code>git clone git@github.com:jorgeolaya/test_desarrollador.git</code></pre>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    <h2 id="setup">Configurar la Aplicación</h2>
+    <p>Navega al directorio del proyecto e instala las dependencias:</p>
+    <pre><code>cd test_desarrollador
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+composer install</code></pre>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    <p>Copia el archivo <code>.env.example</code> a <code>.env</code> y genera una clave de aplicación:</p>
+    <pre><code>cp .env.example .env
 
-## Learning Laravel
+php artisan key:generate</code></pre>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    <h2 id="database">Configurar la Base de Datos</h2>
+    <p>Abre el archivo <code>.env</code> y configura los ajustes de conexión de tu base de datos. Por ejemplo:</p>
+    <pre><code>DB_CONNECTION=mysql
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nombre_de_tu_base_de_datos
+DB_USERNAME=usuario_de_tu_base_de_datos
+DB_PASSWORD=contraseña_de_tu_base_de_datos</code></pre>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    <h2 id="migrations">Ejecutar Migraciones</h2>
+    <p>Ejecuta las migraciones de la base de datos para crear las tablas necesarias:</p>
+    <pre><code>php artisan migrate</code></pre>
 
-## Laravel Sponsors
+    <h2 id="serve">Servir la Aplicación</h2>
+    <p>Finalmente, sirve la aplicación usando el servidor PHP incorporado:</p>
+    <pre><code>php artisan serve</code></pre>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    <p>La aplicación estará disponible en <a href="http://localhost:8000">http://localhost:8000</a>.</p>
 
-### Premium Partners
+    <h2 id="usage">Uso</h2>
+    <p>Para probar la funcionalidad de registro, navega a <code>/register</code> y completa el formulario de registro. La aplicación validará la entrada y almacenará el nuevo usuario en la base de datos.</p>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    <p>Aquí tienes un ejemplo de cómo enviar el formulario de registro usando JavaScript:</p>
+    <pre><code>document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-## Contributing
+    var formData = new FormData(this);
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    fetch('/register', {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Usuario registrado con éxito!');
+        } else {
+            alert('Error al registrar el usuario.');
+        }
+    })
+    .catch(error => console.error('Error:', error));
 
-## Code of Conduct
+});</code></pre>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    <p>Para cualquier otra pregunta o problema, por favor consulta la <a href="https://laravel.com/docs">documentación de Laravel</a>.</p>
 
-## Security Vulnerabilities
+    <h2 id="credits">Créditos</h2>
+    <p>Desarrollado por Jorge Olaya.</p>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    <p><a class="btn" href="https://github.com/jorgeolaya/test_desarrollador">Ver en GitHub</a></p>
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# test_desarrollador
->>>>>>> 842efac6297dd8797907068cec370949c7933c37
+</body>
+</html>
