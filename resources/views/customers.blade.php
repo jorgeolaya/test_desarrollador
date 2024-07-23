@@ -22,7 +22,7 @@
             <input type="email" id="email" name="email" required>
             <div class="separator"></div>
             <label for="password">Contraseña:</label>
-            <input type="password" placeholder="Debe tener al menos 6 caracteres" id="password" name="password" required>
+            <input type="password" placeholder="Debe tener al menos 6 caracteres" id="password" name="password" required style="font-size: 12px;">
             <p id="password-hint" style="font-size: 0.6em;">La contraseña debe contener al menos seis caracteres.</p>
             <div class="separator"></div>
             <label for="confirmPassword">Vuelve a escribir la contraseña:</label>
