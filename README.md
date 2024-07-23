@@ -1,128 +1,101 @@
 ````markdown
-# Aplicación Laravel
+# Prueba Técnica para el Cargo de Desarrollador
 
-Esta es una aplicación Laravel simple que demuestra el registro y autenticación de usuarios. A continuación se detallan las instrucciones para clonar, configurar y ejecutar la aplicación en tu máquina local.
+Este repositorio contiene una prueba técnica para el cargo de desarrollador. A continuación, encontrarás las instrucciones necesarias para clonar el repositorio, instalar dependencias, configurar el entorno y ejecutar el servidor de desarrollo.
 
-## Tabla de Contenidos
+## Contenido
 
--   [Clonar el Repositorio](#clonar-el-repositorio)
--   [Configurar la Aplicación](#configurar-la-aplicación)
--   [Configurar la Base de Datos](#configurar-la-base-de-datos)
--   [Ejecutar Migraciones](#ejecutar-migraciones)
--   [Servir la Aplicación](#servir-la-aplicación)
--   [Uso](#uso)
+-   [Descripción del Proyecto](#descripción-del-proyecto)
+-   [Cómo Clonar el Repositorio](#cómo-clonar-el-repositorio)
+-   [Cómo Instalar las Dependencias del Proyecto](#cómo-instalar-las-dependencias-del-proyecto)
+-   [Cómo Configurar el Entorno](#cómo-configurar-el-entorno)
+-   [Cómo Ejecutar el Servidor de Desarrollo de Laravel](#cómo-ejecutar-el-servidor-de-desarrollo-de-laravel)
 -   [Créditos](#créditos)
 
-## Clonar el Repositorio
+## Descripción del Proyecto
 
-Para clonar el repositorio en tu máquina local, usa el siguiente comando:
+Este proyecto es una aplicación web desarrollada en Laravel. La aplicación incluye una funcionalidad básica de registro de usuarios y es una base sobre la cual se puede construir una aplicación más completa.
+
+## Cómo Clonar el Repositorio
+
+Para clonar el repositorio en tu máquina local, abre una terminal y ejecuta el siguiente comando:
 
 ```bash
-git clone git@github.com:jorgeolaya/test_desarrollador.git
+git clone https://github.com/jorgeolaya/test_desarrollador.git
 ```
 ````
 
-## Configurar la Aplicación
+Esto creará una copia local del repositorio en tu directorio actual.
 
-Navega al directorio del proyecto e instala las dependencias:
+## Cómo Instalar las Dependencias del Proyecto
 
-```bash
-cd test_desarrollador
-composer install
-```
+Una vez clonado el repositorio, navega al directorio del proyecto y ejecuta los siguientes comandos para instalar las dependencias:
 
-Copia el archivo `.env.example` a `.env` y genera una clave de aplicación:
+1. **Instalar dependencias de PHP usando Composer**:
+
+    ```bash
+    cd test_desarrollador
+    composer install
+    ```
+
+2. **Instalar dependencias de JavaScript usando npm**:
+
+    ```bash
+    npm install
+    ```
+
+## Cómo Configurar el Entorno
+
+El proyecto utiliza un archivo `.env` para gestionar la configuración del entorno. Debes crear un archivo `.env` en la raíz del proyecto y configurar las variables de entorno necesarias. Puedes copiar el archivo de ejemplo `.env.example` y renombrarlo a `.env`:
 
 ```bash
 cp .env.example .env
-php artisan key:generate
 ```
 
-## Configurar la Base de Datos
+Luego, edita el archivo `.env` para configurar los detalles de la base de datos y otras configuraciones específicas del entorno. Asegúrate de definir al menos las siguientes variables:
 
-Abre el archivo `.env` y configura los ajustes de conexión de tu base de datos. Aquí tienes un ejemplo de configuración:
+```plaintext
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:YOUR_APP_KEY
+APP_DEBUG=true
+APP_URL=http://localhost
 
-```dotenv
+LOG_CHANNEL=stack
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=nombre_de_tu_base_de_datos
-DB_USERNAME=usuario_de_tu_base_de_datos
-DB_PASSWORD=contraseña_de_tu_base_de_datos
+DB_DATABASE=nombre_de_la_base_de_datos
+DB_USERNAME=usuario_de_la_base_de_datos
+DB_PASSWORD=contraseña_de_la_base_de_datos
 ```
 
-## Ejecutar Migraciones
+## Cómo Ejecutar el Servidor de Desarrollo de Laravel
 
-Ejecuta las migraciones de la base de datos para crear las tablas necesarias:
-
-```bash
-php artisan migrate
-```
-
-## Servir la Aplicación
-
-Para servir la aplicación, usa el servidor PHP incorporado:
+Para iniciar el servidor de desarrollo de Laravel, asegúrate de estar en el directorio del proyecto y ejecuta el siguiente comando:
 
 ```bash
 php artisan serve
 ```
 
-La aplicación estará disponible en [http://localhost:8000](http://localhost:8000).
-
-## Uso
-
-Para probar la funcionalidad de registro, navega a `/register` y completa el formulario de registro. La aplicación validará la entrada y almacenará el nuevo usuario en la base de datos.
-
-Ejemplo de cómo enviar el formulario de registro usando JavaScript:
-
-```javascript
-document
-    .getElementById("registrationForm")
-    .addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        var formData = new FormData(this);
-
-        fetch("/register", {
-            method: "POST",
-            headers: {
-                "X-CSRF-TOKEN": document
-                    .querySelector('meta[name="csrf-token"]')
-                    .getAttribute("content"),
-            },
-            body: formData,
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.success) {
-                    alert("¡Usuario registrado con éxito!");
-                } else {
-                    alert("Error al registrar el usuario.");
-                }
-            })
-            .catch((error) => console.error("Error:", error));
-    });
-```
-
-Para más información o problemas, consulta la [documentación de Laravel](https://laravel.com/docs).
+Esto iniciará un servidor de desarrollo en `http://localhost:8000`. Puedes abrir esta URL en tu navegador para ver la aplicación en funcionamiento.
 
 ## Créditos
 
-Desarrollado por **Jorge Olaya**.
+Desarrollado por [Jorge Olaya](mailto:jorgeeolayap@gmail.com). Agradezco tu tiempo para revisar esta prueba técnica. Si tienes alguna pregunta o necesitas más información, no dudes en contactarme.
 
-[Ver en GitHub](https://github.com/jorgeolaya/test_desarrollador)
+---
+
+¡Gracias por revisar el proyecto!
 
 ```
 
-### Descripción
+### Cómo Usar Este Archivo `README.md`
 
-- **Clonar el Repositorio**: Instrucciones para clonar el repositorio.
-- **Configurar la Aplicación**: Instalación de dependencias y configuración del archivo `.env`.
-- **Configurar la Base de Datos**: Configuración de conexión a la base de datos en el archivo `.env`.
-- **Ejecutar Migraciones**: Ejecutar migraciones para crear las tablas necesarias.
-- **Servir la Aplicación**: Cómo ejecutar la aplicación localmente.
-- **Uso**: Cómo usar la funcionalidad de registro y un ejemplo de JavaScript.
-- **Créditos**: Información del desarrollador.
+1. **Copia y pega el contenido** en un archivo llamado `README.md` en la raíz de tu repositorio.
+2. **Asegúrate de** ajustar cualquier detalle específico, como las configuraciones de entorno o el nombre del proyecto, si es necesario.
+3. **Guarda los cambios** y realiza un commit con el archivo actualizado.
 
-Este archivo `README.md` se verá bien en GitHub y proporciona toda la información necesaria para que alguien pueda clonar y configurar tu aplicación correctamente.
+Este archivo `README.md` proporciona una guía completa para cualquier persona que quiera clonar, instalar y ejecutar el proyecto.
 ```
